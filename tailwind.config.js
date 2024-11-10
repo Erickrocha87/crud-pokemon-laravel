@@ -14,7 +14,14 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            backgroundImage: {
+                'pokemon-halloween': "url('/img/pokemon-halloween.jpg')",
+              },
+            colors: {
+                'default': '#D90718',
+            },
         },
     },
     plugins: [],
 };
+

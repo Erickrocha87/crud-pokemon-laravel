@@ -16,13 +16,14 @@
             </style>
         @endif
     </head>
-    <body>
+    <body class= "bg-[url('http://localhost:8000/img/pokemon-halloween4.jpg')] bg-cover bg-center h-screen w-screen flex items-center justify-center"">
         @section('navbar')
             
         @show
  
-        <div class="container">
+        <div class="">
             @yield('content')
         </div>
     </body>
 </html>
+
