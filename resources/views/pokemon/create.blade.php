@@ -3,10 +3,11 @@
 @section('title', 'Novo Pokemon')
 @section('content')
 
+<div class="bg-[url('http://localhost:8000/img/pokemon-halloween4.jpg')] bg-cover bg-center h-screen w-screen flex items-center justify-center"> 
 
-<div class="flex justify-center mb-4 relative z-10 top-4 "><img src="http://localhost:8000/img/pokebolaper.png" alt="Logo" class="w-44 h-44"></div>
+<div class="flex justify-center mb-4 relative z-10 bottom-60 left-52 "><img src="http://localhost:8000/img/pokebolaper.png" alt="Logo" class="w-44 h-44"></div>
 
-<form class="w-full max-w-2g relative bottom-14 bg-shadow-md rounded px-12 pt-12 pb-20 mb-4 bg-cover bg-[url('http://localhost:8000/img/bg-1.jpeg')]" action="{{ url('pokemon') }}" method="POST">
+<form class="w-80 h-2/4 relative right-10 top-4 bottom-14 bg-shadow-md rounded px-12 pt-12 pb-20 mb-4 bg-cover bg-[url('http://localhost:8000/img/bg-1.jpeg')]" action="{{ url('pokemon') }}" method="POST">
 
 
 
@@ -15,7 +16,7 @@
       Make a pokémon
     </label>
     @csrf
-    <input class=" hover:bg-gray-300 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="name" placeholder="Name" required>
+    <input class="w-56 hover:bg-gray-300 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="name" placeholder="Name" required>
   </div>
 
 
@@ -23,7 +24,7 @@
     <label class="block text-indigo-300 text-sm font-bold mb-2" for="type">
 
     </label>
-    <input class="hover:bg-gray-300 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="type" placeholder="Type" required>
+    <input class="w-56 hover:bg-gray-300 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="type" placeholder="Type" required>
   </div>
 
 
@@ -32,7 +33,7 @@
     <label class="block text-indigo-300 text-sm font-bold mb-5" for="power_points">
 
     </label>
-    <input class="hover:bg-gray-300 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="number" name="power_points" placeholder="Power_points" required>
+    <input class="w-56 hover:bg-gray-300 shadow appearance-none border rounded py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="number" name="power_points" placeholder="Power_points" required>
   </div>
 
 
@@ -45,6 +46,7 @@
 <p class="text-center text-gray-500 text-xs">
 
 </p>
+</div>
 </div>
 </div>
 @endsection
