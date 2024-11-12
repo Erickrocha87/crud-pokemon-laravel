@@ -38,9 +38,15 @@
 
 
   <div class="flex items-center justify-center ">
-    <button class="bg-violet-700 hover:bg-violet-900 text-gray-300 font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline focus:ring focus:ring-violet-300 active:bg-violet-700" type="submit">
+    <button class="bg-violet-700 hover:bg-violet-900 text-white font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline focus:ring focus:ring-violet-300 active:bg-violet-700" type="submit">
       Create Pokémon
     </button>
+  </div>
+
+  <div class="flex items-center justify-center">
+  <a href="{{ url('pokemon/') }}" class="bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-6 rounded mt-3 focus:outline-none focus:shadow-outline focus:ring focus:ring-purple-300 active:bg-purple-700">
+    See your Pokémon
+    </a>
   </div>
 </form>
 <p class="text-center text-gray-500 text-xs">
