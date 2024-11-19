@@ -20,7 +20,13 @@ class PokemonController extends Controller
 
     public function store(Request $request)
     {
-        Pokemon::create($request->all());
+        $image = $request->file("image")->store("images", "public");
+        $pokemon = Pokemon::create([
+            "name"=>$request->name,
+            "type"=>$request->type,
+            "power_points"=>$request->power_points,
+            "image"=>$image,
+        ]);
         return redirect('pokemon')->with('success', 'Pokemon created successfully.');
     }
 

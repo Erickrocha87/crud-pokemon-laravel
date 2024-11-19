@@ -24,7 +24,9 @@
         @foreach($pokemon as $poke)
 
             <div class=" w-64 h-56 mb-4 p-4 bg-white shadow-md rounded">
-                
+                <div>
+                    <img src="{{asset('storage/' . $poke->image)}}" alt="fotinho">
+                </div>
                 <p class="text-xl text-center"><span class="text-red-500">Pokémon </span> #{{$loop->iteration}}</p>
                 
                 <p class="mt-3 text-xl text-center p-1.5"> {{ $poke->name }} </p>

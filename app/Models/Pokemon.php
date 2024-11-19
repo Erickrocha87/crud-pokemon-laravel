@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Pokemon extends Model
 {
@@ -13,5 +14,11 @@ class Pokemon extends Model
         'name',
         'type',
         'power_points',
+        'image'
     ];
+
+    public function ower() : BelongsTo {
+       
+        return $this->belongsTo(Ower::class);
+    }
 }
