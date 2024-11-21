@@ -10,7 +10,7 @@ class PokemonController extends Controller
 {
     public function index()
     {
-        $pokemon = Pokemon::all();
+        $pokemon = Pokemon::simplePaginate(8);
         return view('pokemon.index', compact('pokemon'));
     }
 
@@ -31,7 +31,7 @@ class PokemonController extends Controller
             "image"=>$image,
             
         ]);
-        return redirect('pokemon')->with('success', 'Pokemon created successfully.');
+        return redirect('pokemon/index')->with('success', 'Pokemon created successfully.');
     }
 
     public function edit($id)
@@ -56,7 +56,7 @@ class PokemonController extends Controller
             "image"=>$image
         ]);
 
-        return redirect('pokemon')->with('success', 'Pokemon updated successfully.');
+        return redirect('pokemon/index')->with('success', 'Pokemon updated successfully.');
     }
 
     public function destroy($id)

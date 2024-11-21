@@ -18,8 +18,8 @@ class OwnerController extends Controller
     public function getPokemonByOwner($id)
 {
     $owner = Owner::find($id);
-    $pokemons = Pokemon::where('owner_id', $id)->all();
-    return view('owner.getPokemonByOwner', compact('pokemons', 'owner'));
+    $pokemon = Pokemon::where('owner_id', $id)->simplePaginate(8);
+    return view('pokemon/index', compact('pokemon', 'owner'));
 }
 
 public function create()

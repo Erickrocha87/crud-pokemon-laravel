@@ -37,7 +37,7 @@
 
                 <a href="{{ url('pokemon/'.$poke->id.'/edit') }}" class="relative top-3 hover:text-blue-500">Edit</a>
 
-                <form action="{{ url('pokemon/'.$poke->id) }}" method="POST" class="inline-block">
+                <form onsubmit="return confirm('Deseja realmente excluir?')" action="{{ url('pokemon/'.$poke->id) }}" method="POST" class="inline-block">
 
                     @csrf
                     @method('DELETE')
@@ -50,3 +50,8 @@
     @endif
     </div>
 @endsection
+</div>
+    <div class="mb-1" style="position:fixed;bottom:0"">
+    {{$pokemon->links()}}
+    </div>
+</div>

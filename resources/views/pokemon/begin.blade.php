@@ -27,19 +27,13 @@
     </div>
 
     <div class="flex items-center justify-center mt-2">
-      <a href="{{ url('owner/edit') }}" class="bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-6 rounded mt-3 focus:outline-none focus:shadow-outline focus:ring focus:ring-purple-300 active:bg-purple-700 w-80 h-12">
-        <span class="flex justify-center mt-1">Edit Owner</span>
+      <a href="{{ url('owner/') }}" class="bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-6 rounded mt-3 focus:outline-none focus:shadow-outline focus:ring focus:ring-purple-300 active:bg-purple-700 w-80 h-12">
+        <span class="flex justify-center mt-1">View Owner</span>
       </a>
     </div>
 
     <div class="flex items-center justify-center mt-2">
-      <a href="{{ url('pokemon/edit') }}" class="bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-6 rounded mt-3 focus:outline-none focus:shadow-outline focus:ring focus:ring-purple-300 active:bg-purple-700 w-80 h-12">
-        <span class="flex justify-center mt-1">Edit Pokémon</span>
-      </a>
-    </div>
-
-    <div class="flex items-center justify-center mt-2">
-      <a href="{{ url('pokemon/index') }}" class="bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-6 rounded mt-3 focus:outline-none focus:shadow-outline focus:ring focus:ring-purple-300 active:bg-purple-700 w-80 h-12">
+      <a href="{{ url('owner/pokemon/{id}') }}" class="bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-6 rounded mt-3 focus:outline-none focus:shadow-outline focus:ring focus:ring-purple-300 active:bg-purple-700 w-80 h-12">
         <span class="flex justify-center mt-1">Pokémon by owner</span>
       </a>
     </div>

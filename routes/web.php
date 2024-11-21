@@ -25,3 +25,4 @@ Route::post('owner', [OwnerController::class, 'store']);
 Route::get('owner/{id}/edit', [OwnerController::class, 'edit']);
 Route::put('owner/{id}', [OwnerController::class, 'update']);
 Route::delete('owner/{id}', [OwnerController::class, 'destroy']);
+Route::get('owner/pokemon/{id}', [OwnerController::class, 'getPokemonByOwner']);

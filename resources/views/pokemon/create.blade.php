@@ -63,7 +63,7 @@
     </div>
 
     <div class="flex items-center justify-center">
-      <a href="{{ url('pokemon/') }}" class="bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-6 rounded mt-3 focus:outline-none focus:shadow-outline focus:ring focus:ring-purple-300 active:bg-purple-700">
+      <a href="{{ url('pokemon/index') }}" class="bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-6 rounded mt-3 focus:outline-none focus:shadow-outline focus:ring focus:ring-purple-300 active:bg-purple-700">
         See your Pokémon
       </a>
     </div>
