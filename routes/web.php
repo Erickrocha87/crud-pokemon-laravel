@@ -8,14 +8,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('pokemon', [PokemonController::class, 'index']);
+Route::get('/pokemon', function () {
+    return view('pokemon/begin');
+});
+
+Route::get('pokemon/index', [PokemonController::class, 'index']);
 Route::get('pokemon/create', [PokemonController::class, 'create']);
 Route::post('pokemon', [PokemonController::class, 'store']);
 Route::get('pokemon/{id}/edit', [PokemonController::class, 'edit']);
 Route::put('pokemon/{id}', [PokemonController::class, 'update']);
 Route::delete('pokemon/{id}', [PokemonController::class, 'destroy']);
 
-Route::get('owner', [OwnerController::class, 'index']);
+Route::get('owner/', [OwnerController::class, 'index']);
 Route::get('owner/create', [OwnerController::class, 'create']);
 Route::post('owner', [OwnerController::class, 'store']);
 Route::get('owner/{id}/edit', [OwnerController::class, 'edit']);
