@@ -44,7 +44,7 @@
         @forelse ($owners as $owner)
         <option value="{{$owner->id}}">{{$owner->name}}</option>
         @empty
-        <option disabled>Nenhum owner cadastrado</option>
+        <option disabled>Any registered owner</option>
         @endforelse
       </select>
     </div>
