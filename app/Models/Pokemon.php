@@ -14,11 +14,12 @@ class Pokemon extends Model
         'name',
         'type',
         'power_points',
-        'image'
+        'image',
+        'owner_id'
     ];
 
-    public function ower() : BelongsTo {
+    public function owner() : BelongsTo {
        
-        return $this->belongsTo(Ower::class);
+        return $this->belongsTo(Owner::class, 'owner_id');
     }
 }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('type');
             $table->integer('power_points');
             $table->string('image');
-            $table->foreignId('ower_id')->references('id')->on('owers');
+            $table->foreignId('owner_id')->references('id')->on('owners');
         });
     }
 

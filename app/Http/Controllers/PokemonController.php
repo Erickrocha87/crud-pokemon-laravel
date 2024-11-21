@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pokemon;
+use App\Models\Owner;
 use Illuminate\Http\Request;
 
 class PokemonController extends Controller
@@ -15,17 +16,20 @@ class PokemonController extends Controller
 
     public function create()
     {
-        return view('pokemon.create');
+        $owners = Owner::all();
+        return view('pokemon.create', compact('owners'));
     }
 
     public function store(Request $request)
     {
         $image = $request->file("image")->store("images", "public");
         $pokemon = Pokemon::create([
+            "owner_id"=>$request->owner_id,
             "name"=>$request->name,
             "type"=>$request->type,
             "power_points"=>$request->power_points,
             "image"=>$image,
+            
         ]);
         return redirect('pokemon')->with('success', 'Pokemon created successfully.');
     }
@@ -39,7 +43,19 @@ class PokemonController extends Controller
     public function update(Request $request, $id)
     {
         $pokemon = Pokemon::findOrFail($id);
-        $pokemon->update($request->all());
+
+        if($request->hasFile('image')) {
+            $image = $request->file("image")->store("images", "public");
+        } else {
+            $image = $pokemon->image;
+        }
+        $pokemon = $pokemon->update([
+            "name"=>$request->name,
+            "type"=>$request->type,
+            "power_points"=>$request->power_points,
+            "image"=>$image
+        ]);
+
         return redirect('pokemon')->with('success', 'Pokemon updated successfully.');
     }
 
