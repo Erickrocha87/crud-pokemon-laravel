@@ -1,8 +1,7 @@
-@extends('layouts.app')
 
-@section('title', 'Begin')
-@section('content')
 
+
+<x-app-layout>
 <div class="bg-[url('http://localhost:8000/img/pokemon-halloween4.jpg')] bg-cover bg-center h-screen w-screen flex items-center justify-center">
 
   <div class="flex justify-center mb-4 relative z-10 bottom-60 left-52 "><img src="http://localhost:8000/img/pokebolaper.png" alt="Logo" class="w-44 h-44"></div>
@@ -43,4 +42,4 @@
 </div>
 </div>
 </div>
-@endsection
+</x-app-layout>
