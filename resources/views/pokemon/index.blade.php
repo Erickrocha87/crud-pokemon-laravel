@@ -1,16 +1,12 @@
-@extends('layouts.app')
-
-@section('title', 'Lista Pokémon')
-
-@section('content')
-
+<x-app-layout>
     
+@can('create', App\Models\Pokemon::class)
     <div class="h-screen w-screen bg-blue-50">
 
     <h1 class="font-bold text-4xl text-center p-9 bg-blue-50"> Check your <span class="text-red-500 ">Pokémon</span> list </h1>
 
     <a href="{{ url('pokemon/create') }}" class=" font-bold text-2xl relative  flex justify-center text-center bottom-2 hover:text-blue-900"> Make a <span class="text-red-500 ml-1.5 hover:text-red-700">pokémon</span>!</a>
-
+    @endcan
     @if ($pokemon->isEmpty())
 
         <h1 class="text-center text-2xl text-gray-600 mt-8">You don't have any Pokémon!</h1>
@@ -49,9 +45,9 @@
     </div>
     @endif
     </div>
-@endsection
 </div>
-    <div class="mb-1" style="position:fixed;bottom:0"">
+<div class="mb-1" style="position:fixed;bottom:0"">
     {{$pokemon->links()}}
-    </div>
 </div>
+</div>
+</x-app-layout>

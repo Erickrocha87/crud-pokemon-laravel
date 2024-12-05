@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Gate;
 use App\Models\Pokemon;
 use App\Models\Owner;
 use Illuminate\Http\Request;
@@ -16,6 +16,8 @@ class PokemonController extends Controller
 
     public function create()
     {
+        Gate::authorize('create', Pokemon::class);
+         
         $owners = Owner::all();
         return view('pokemon.create', compact('owners'));
     }
@@ -36,6 +38,7 @@ class PokemonController extends Controller
 
     public function edit($id)
     {
+        Gate::authorize('delete', Pokemon::class);
         $pokemon = Pokemon::findOrFail($id);
         return view('pokemon.edit', compact('pokemon'));
     }
@@ -61,6 +64,7 @@ class PokemonController extends Controller
 
     public function destroy($id)
     {
+        Gate::authorize('create', Pokemon::class);
         $pokemon = Pokemon::findOrFail($id);
         $pokemon->delete();
         return redirect('pokemon')->with('success', 'Pokemon deleted successfully.');
